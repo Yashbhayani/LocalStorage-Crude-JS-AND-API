@@ -155,17 +155,3 @@ function myfunction(){
     localStorage.setItem("User",JSON.stringify(User_recode));
     AddData();
     }
-
-
-            // ui.push(person);
-            // Text = "<thread>";
-            // UI = ui.length;
-            // var i;
-
-            // for(i=0; i<UI; i++)
-            // {
-            //     Text +=  "<tr> <td>" + ui[i].FirstName + "</td> <td>" + ui[i].LastName + "</td> <td> " + ui[i].Education_Filed + "</td> <td> " + ui[i].Gender + " </td> <td>" + ui[i].Email + "</td> <td> " + ui[i].Password + " </td> <td> <button type='button' onclick='Edit("+i+")'>Edit</button> </td> <td><button type='button' onclick='Delete("+i+")'>Delete</button> </td></tr>";
-            // }
-            // Text += "</thread>";
-
-            // document.getElementById('UIO').innerHTML = Text;
