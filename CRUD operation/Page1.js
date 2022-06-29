@@ -25,9 +25,6 @@ function AddData(){
   
 
 function myfunction(){
-
-    // CD = 1;
-
     class user{
         constructor(FirstName,LastName,Education_Filed,Email,Password){
             this.FirstName = FirstName;
@@ -35,7 +32,6 @@ function myfunction(){
             this.EducationFiled = Education_Filed;
             this.Email = Email;
             this.Password = Password;
-
         }
     }
  
@@ -44,7 +40,6 @@ function myfunction(){
             super(FirstName,LastName,Education_Filed,Gender,Email,Password)
             this.Gender = Gender; 
         }
-
         Usershow(){
             AddData();
         }
@@ -64,18 +59,13 @@ function myfunction(){
     Education_Filed = person["Education_Filed"];
     
     
-    if(document.getElementById('inlineRadio1').checked)
-    {
+    if(document.getElementById('inlineRadio1').checked){
         person["Gender"] = document.getElementById('inlineRadio1').value;
         Gender = person["Gender"];
-    }
-    else if(document.getElementById('inlineRadio2').checked)
-    {
+    }else if(document.getElementById('inlineRadio2').checked){
         person["Gender"] = document.getElementById('inlineRadio2').value;
         Gender = person["Gender"];
-    }
-    else if(document.getElementById('inlineRadio3').checked)
-    {
+    }else if(document.getElementById('inlineRadio3').checked){
         person["Gender"] = document.getElementById('inlineRadio3').value;
         Gender = person["Gender"];
     }
@@ -90,13 +80,9 @@ function myfunction(){
 
     if(FirstName === '' || LastName === '' || Education_Filed === '' || Gender === '' || Email === '' || Password === ''){
         alert("Some Property are Undefined!");
-    }
-    else{
-            
+    }else{       
         User_recode = JSON.parse(localStorage.getItem("User"))?JSON.parse(localStorage.getItem("User")):[]
-
         if(CD == 1){
-            
             User_recode[ID].FirstName = FirstName;
             User_recode[ID].LastName = LastName;
             User_recode[ID].Education_Filed = Education_Filed;
@@ -106,15 +92,12 @@ function myfunction(){
             localStorage.setItem("User",JSON.stringify(User_recode));
             CD = 0;
             ID = undefined;
-
             const myUser = new user1(FirstName,LastName,Education_Filed,Gender,Email,Password);
             myUser.Usershow();
         }else if(CD == 0){
-            
             if(User_recode.some((v) => {return v.Email == Email})){
                     alert("Email id is a Already Existed!")
-            }else{
-                            
+            }else{  
                 User_recode.push({
                     FirstName : FirstName,
                     LastName : LastName,
@@ -124,7 +107,6 @@ function myfunction(){
                     Password : Password
                     })
                     localStorage.setItem("User",JSON.stringify(User_recode));
-
                 const myUser = new user1(FirstName,LastName,Education_Filed,Gender,Email,Password);
                 myUser.Usershow();
             }
@@ -144,7 +126,6 @@ function myfunction(){
     document.getElementById('exampleInputlname1').value = User_recode[i].LastName;
     document.getElementById('exampleInputEmail1').value = User_recode[i].Email;
     document.getElementById('exampleInputPassword1').value = User_recode[i].Password;
-
     CD = 1;
     }
 
